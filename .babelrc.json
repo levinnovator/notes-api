@@ -1,0 +1,44 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": "commonjs",
+        "targets": {
+          "node": "current"
+        }
+      }
+    ],
+    "@babel/preset-typescript"
+  ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["."],
+        "alias": {
+          "@config": "./src/config",
+          "@entities": "./src/entities",
+          "@initializers": "./src/initializers",
+          "@services": "./src/services",
+          "@models": "./src/models",
+          "@api": "./src/api",
+          "@middlewares": "./src/middlewares"
+        }
+      }
+    ],
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ],
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ],
+    "@babel/plugin-transform-runtime"
+  ]
+}

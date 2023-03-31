@@ -1,0 +1,14 @@
+name: Code Quality
+on: push
+
+jobs:
+  eslint-scan:
+    name: 'ESLint'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: yarn install --pure-lockfile
+      - name: Run ESLint
+        run: yarn lint
